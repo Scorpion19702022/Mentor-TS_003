@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--color-dark01: #f0f0f0;
+	--color-dark02: #d2d2d2;
+	--color-dark03: #b4b4b4;
+	--color-dark04: #969696;
+	--color-dark05: #696969;
+	--color-dark06: #545454;
+	--color-dark07: #3f3f3f;
+	--color-dark08: #2a2a2a;
+	--color-dark09: #151515;
+	--color-dark10: #000000;
+
+	--color-blue01: #e5f8ff;
+	--color-blue02: #b2ebff;
+	--color-blue03: #7fdfff;
+	--color-blue04: #4cd2ff;
+	--color-blue05: #00bfff;
+	--color-blue06: #00abe5;
+	--color-blue07: #0085b2;
+	--color-blue08: #005f7f;
+	--color-blue09: #00394c;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--color-dark09);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3em;
+}
