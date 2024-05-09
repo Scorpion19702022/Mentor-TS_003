@@ -26,3 +26,11 @@
 	padding: 2em;
 	background-color: var(--color-dark08);
 }
+
+.heading_out {
+	text-decoration: line-through;
+}
+
+.heading_normal {
+	text-decoration: none;
+}
