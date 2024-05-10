@@ -107,3 +107,10 @@
 .btn:hover::after {
 	transform: translate(-10%, -28%);
 }
+
+.box_info {
+	width: 100%;
+	padding: 1em 0em;
+	display: flex;
+	justify-content: space-between;
+}
