@@ -66,6 +66,11 @@
 }
 
 .btn {
+	position: relative;
 	width: 70%;
 	padding: 0.4em 1em;
+	font-size: 1.4em;
+	color: var(--color-blue03);
+	background: none;
+	border: 0.04em solid var(--color-blue05);
 }
