@@ -120,3 +120,8 @@
 	font-size: 1.2em;
 	color: var(--color-blue06);
 }
+
+.span_state {
+	font-weight: bold;
+	color: var(--color-blue05);
+}
