@@ -74,6 +74,8 @@
 	background: none;
 	border: 0.04em solid var(--color-blue05);
 	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
 }
 
 .btn::before {
@@ -81,9 +83,14 @@
 	content: '';
 	width: 150%;
 	height: 130%;
-	background-color: var(--color-blue05);
+	background-color: var(--color-blue08);
 	transform: translate(-130%, -28%);
+	z-index: -1;
 	transition: all 0.2s ease-in-out;
+}
+
+.btn:hover::before {
+	transform: translate(-90%, -28%);
 }
 
 .btn::after {
@@ -91,7 +98,12 @@
 	content: '';
 	width: 150%;
 	height: 130%;
-	background-color: var(--color-blue05);
+	background-color: var(--color-blue08);
 	transform: translate(30%, -28%);
+	z-index: -1;
 	transition: all 0.2s ease-in-out;
+}
+
+.btn:hover::after {
+	transform: translate(-10%, -28%);
 }
