@@ -114,3 +114,15 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+.state_info {
+	width: 50%;
+	font-size: 1.2em;
+	color: var(--color-blue06);
+}
+
+.task_info {
+	width: 50%;
+	font-size: 1.2em;
+	color: var(--color-blue06);
+}
