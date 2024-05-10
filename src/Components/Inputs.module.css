@@ -21,10 +21,31 @@
 	--color-blue09: #00394c;
 }
 
-.box_inputs {
+.wrapper_inputs {
 	width: 75%;
 	padding: 2em;
 	margin-bottom: 2em;
 	display: flex;
+	flex-direction: column;
 	background-color: var(--color-dark08);
+}
+
+.box_task {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	margin-bottom: 0.2em;
+	color: var(--color-blue04);
+}
+
+.input {
+	padding: 0.4em;
+	font-size: 1.4em;
+}
+
+.box_btn {
+	width: 30%;
 }

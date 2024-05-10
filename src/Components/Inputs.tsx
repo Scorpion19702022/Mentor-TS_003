@@ -13,15 +13,25 @@ const Inputs = () => {
 	}
 
 	return (
-		<div className={styles.box_inputs}>
-			<div className={styles.box_task}>
-				<label className={styles.label}>Wpisz zadanie:</label>
-				<input className={styles.input} type='text' value={inputValue} onChange={handleChangeInputValue} />
+		<div className={styles.wrapper_inputs}>
+			<div className={styles.box_inputs}>
+				<div className={styles.box_task}>
+					<label className={styles.label}>Wpisz zadanie:</label>
+					<input className={styles.input} type='text' value={inputValue} onChange={handleChangeInputValue} />
+				</div>
+				<div className={styles.box_btn}>
+					<button className={styles.btn} onClick={() => addToDo(inputValue)}>
+						Dodaj
+					</button>
+				</div>
 			</div>
-			<div className={styles.box_btn}>
-				<button className={styles.btn} onClick={() => addToDo(inputValue)}>
-					Dodaj
-				</button>
+			<div className={styles.box_info}>
+				<p className={styles.state_info}>
+					Informacja o stanie: <span className={styles.span_state_info}></span>
+				</p>
+				<p className={styles.task_info}>
+					Ilość zadań: <span className={styles.span_task_info}></span>
+				</p>
 			</div>
 		</div>
 	)
