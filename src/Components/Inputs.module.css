@@ -73,4 +73,25 @@
 	color: var(--color-blue03);
 	background: none;
 	border: 0.04em solid var(--color-blue05);
+	cursor: pointer;
+}
+
+.btn::before {
+	position: absolute;
+	content: '';
+	width: 150%;
+	height: 130%;
+	background-color: var(--color-blue05);
+	transform: translate(-130%, -28%);
+	transition: all 0.2s ease-in-out;
+}
+
+.btn::after {
+	position: absolute;
+	content: '';
+	width: 150%;
+	height: 130%;
+	background-color: var(--color-blue05);
+	transform: translate(30%, -28%);
+	transition: all 0.2s ease-in-out;
 }
