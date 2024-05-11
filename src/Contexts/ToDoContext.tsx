@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
 import { ToDoItemType } from '../Types'
@@ -33,6 +33,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [infoStatus, setInfoStatus] = useState('stan akcji')
 	const [infoTab, setInfoTab] = useState(toDos.length)
 
+	useEffect(() => {
+		setInfoTab(toDos.length)
+	}, [toDos.length])
+
 	const addToDo = (valueFromInput: string) => {
 		const Task = {
 			id: uuidv4(),
@@ -43,8 +47,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setToDos([...toDos, Task])
 			setInfoStatus('dodano prawidłowo')
 		}
-
-		setInfoTab(toDos.length)
 	}
 
 	const deleteToDo = (id: string) => {

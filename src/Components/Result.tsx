@@ -21,7 +21,7 @@ const Result = () => {
 					<input
 						className={styles.check_box}
 						type='checkbox'
-						checked={toDo.isComplete}
+						// checked={toDo.isComplete}
 						onClick={() => completeToDo(toDo.id)}
 					/>
 				</div>
