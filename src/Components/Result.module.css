@@ -23,8 +23,10 @@
 
 .box_result {
 	width: 75%;
+	height: 600px;
 	padding: 2em;
 	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-blue07);
 }
 
 .heading_out {

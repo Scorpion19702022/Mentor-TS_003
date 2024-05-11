@@ -30,6 +30,7 @@
 	align-items: center;
 	justify-content: center;
 	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-blue07);
 }
 
 .box_inputs {
