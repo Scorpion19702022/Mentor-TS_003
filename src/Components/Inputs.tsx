@@ -12,6 +12,11 @@ const Inputs = () => {
 		setInputValue(e.target.value)
 	}
 
+	const handleAddTask = () => {
+		addToDo(inputValue)
+		setInputValue('')
+	}
+
 	return (
 		<div className={styles.wrapper_inputs}>
 			<div className={styles.box_inputs}>
@@ -20,7 +25,7 @@ const Inputs = () => {
 					<input className={styles.input} type='text' value={inputValue} onChange={handleChangeInputValue} />
 				</div>
 				<div className={styles.box_btn}>
-					<button className={styles.btn} onClick={() => addToDo(inputValue)}>
+					<button className={styles.btn} onClick={handleAddTask}>
 						Dodaj
 					</button>
 				</div>

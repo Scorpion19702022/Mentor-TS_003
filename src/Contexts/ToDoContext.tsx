@@ -32,7 +32,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			task: valueFromInput,
 			isComplete: false,
 		}
-		setToDos([...toDos, Task])
+		if (Task.task !== '') {
+			setToDos([...toDos, Task])
+		}
 	}
 
 	const deleteToDo = (id: string) => {
