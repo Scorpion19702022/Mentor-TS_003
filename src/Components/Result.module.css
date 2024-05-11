@@ -37,7 +37,14 @@
 	border-bottom: 0.04em dotted var(--color-blue07);
 }
 
+.div_box {
+	width: 33%;
+	display: flex;
+	justify-content: center;
+}
+
 .heading_out {
+	width: 100%;
 	text-decoration: line-through;
 	font-style: italic;
 	font-weight: 100;
@@ -45,8 +52,10 @@
 }
 
 .heading_normal {
+	width: 100%;
 	text-decoration: none;
 	color: var(--color-blue03);
+	align-self: flex-start;
 }
 
 .btn_delete {
