@@ -55,6 +55,7 @@
 	font-size: 1.4em;
 	background: none;
 	border: none;
+	color: var(--color-blue03);
 	border-bottom: 0.04em solid var(--color-blue05);
 }
 
@@ -110,7 +111,7 @@
 
 .box_info {
 	width: 100%;
-	padding: 1em 0em;
+	padding: 1em 0em 0em 0em;
 	display: flex;
 	justify-content: space-between;
 }
