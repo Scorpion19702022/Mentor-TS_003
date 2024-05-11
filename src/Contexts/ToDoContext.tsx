@@ -5,6 +5,7 @@ import { ToDoItemType } from '../Types'
 
 type InitialStateType = {
 	toDos: ToDoItemType[]
+	infoStatus: string
 	addToDo: (valueFromInput: string) => void
 	deleteToDo: (id: string) => void
 	completeToDo: (id: string) => void
@@ -16,6 +17,7 @@ type ToDoProviderType = {
 
 const InitialState: InitialStateType = {
 	toDos: [],
+	infoStatus: '',
 	addToDo: (valueFromInput: string) => {},
 	deleteToDo: (id: string) => {},
 	completeToDo: (id: string) => {},
@@ -26,6 +28,8 @@ const ToDoContext = createContext(InitialState)
 export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [toDos, setToDos] = useState<ToDoItemType[]>([])
 
+	const [infoStatus, setInfoStatus] = useState<string>('stan akcji')
+
 	const addToDo = (valueFromInput: string) => {
 		const Task = {
 			id: uuidv4(),
@@ -34,6 +38,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		}
 		if (Task.task !== '') {
 			setToDos([...toDos, Task])
+			setInfoStatus('dodano prawidłowo')
 		}
 	}
 
@@ -54,7 +59,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setToDos(completeTasks)
 	}
 
-	return <ToDoContext.Provider value={{ toDos, addToDo, deleteToDo, completeToDo }}>{children}</ToDoContext.Provider>
+	return (
+		<ToDoContext.Provider value={{ toDos, infoStatus, addToDo, deleteToDo, completeToDo }}>
+			{children}
+		</ToDoContext.Provider>
+	)
 }
 
 export default ToDoContext

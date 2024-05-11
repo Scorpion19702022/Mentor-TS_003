@@ -6,7 +6,7 @@ import ToDoContext from '../Contexts/ToDoContext'
 const Inputs = () => {
 	const [inputValue, setInputValue] = useState('')
 
-	const { addToDo } = useContext(ToDoContext)
+	const { addToDo, infoStatus } = useContext(ToDoContext)
 
 	const handleChangeInputValue: React.ChangeEventHandler<HTMLInputElement> | undefined = e => {
 		setInputValue(e.target.value)
@@ -32,7 +32,7 @@ const Inputs = () => {
 			</div>
 			<div className={styles.box_info}>
 				<p className={styles.state_info}>
-					Informacja o stanie: <span className={styles.span_state}>XX</span>
+					Informacja o stanie: <span className={styles.span_state}>{infoStatus}</span>
 				</p>
 				<p className={styles.state_info}>
 					Ilość zadań: <span className={styles.span_state}>XX</span>
