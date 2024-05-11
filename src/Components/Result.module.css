@@ -21,7 +21,7 @@
 	--color-blue09: #00394c;
 }
 
-.box_result {
+.wrapper_result {
 	width: 75%;
 	height: 600px;
 	padding: 2em;
@@ -29,8 +29,16 @@
 	border: 0.04em solid var(--color-blue07);
 }
 
+.box_result {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
 .heading_out {
 	text-decoration: line-through;
+	font-style: italic;
+	font-weight: 100;
 }
 
 .heading_normal {
