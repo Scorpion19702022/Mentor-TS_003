@@ -38,7 +38,6 @@
 }
 
 .heading_out {
-	width: 33%;
 	text-decoration: line-through;
 	font-style: italic;
 	font-weight: 100;
@@ -46,7 +45,20 @@
 }
 
 .heading_normal {
-	width: 33%;
 	text-decoration: none;
+	color: var(--color-blue03);
+}
+
+.btn_delete {
+	padding: 0.4em 1em;
+	background: none;
+	border: 0.04em solid var(--color-blue05);
+	color: var(--color-blue05);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn_delete:hover {
+	background-color: var(--color-blue09);
 	color: var(--color-blue03);
 }
