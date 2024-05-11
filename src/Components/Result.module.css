@@ -33,14 +33,20 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	padding-bottom: 0.4em;
+	border-bottom: 0.04em dotted var(--color-blue07);
 }
 
 .heading_out {
+	width: 33%;
 	text-decoration: line-through;
 	font-style: italic;
 	font-weight: 100;
+	color: var(--color-blue03);
 }
 
 .heading_normal {
+	width: 33%;
 	text-decoration: none;
+	color: var(--color-blue03);
 }
