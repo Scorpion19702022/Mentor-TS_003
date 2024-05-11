@@ -9,16 +9,22 @@ const Result = () => {
 	const yourTasks = toDos.map(toDo => {
 		return (
 			<div className={styles.box_result} key={toDo.id}>
-				<h3 className={toDo.isComplete ? styles.heading_out : styles.heading_normal}>{toDo.task}</h3>
-				<button className={styles.btn_delete} onClick={() => deleteToDo(toDo.id)}>
-					Delete
-				</button>
-				<input
-					className={styles.check_box}
-					type='checkbox'
-					checked={toDo.isComplete}
-					onClick={() => completeToDo(toDo.id)}
-				/>
+				<div className={styles.div_heading}>
+					<h3 className={toDo.isComplete ? styles.heading_out : styles.heading_normal}>{toDo.task}</h3>
+				</div>
+				<div className={styles.div_btn}>
+					<button className={styles.btn_delete} onClick={() => deleteToDo(toDo.id)}>
+						Delete
+					</button>
+				</div>
+				<div className={styles.div_input}>
+					<input
+						className={styles.check_box}
+						type='checkbox'
+						checked={toDo.isComplete}
+						onClick={() => completeToDo(toDo.id)}
+					/>
+				</div>
 			</div>
 		)
 	})

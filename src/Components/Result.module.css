@@ -62,3 +62,8 @@
 	background-color: var(--color-blue09);
 	color: var(--color-blue03);
 }
+
+.check_box {
+	width: 25px;
+	height: 25px;
+}
