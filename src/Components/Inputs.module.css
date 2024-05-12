@@ -119,15 +119,16 @@
 
 .state_info_one,
 .state_info_two {
-	width: 50%;
 	font-size: 1.2em;
 	color: var(--color-blue06);
 }
 
 .state_info_one {
+	width: 70%;
 	text-align: left;
 }
 .state_info_two {
+	width: 30%;
 	text-align: right;
 }
 

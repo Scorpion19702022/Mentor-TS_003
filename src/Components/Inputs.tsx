@@ -4,9 +4,9 @@ import styles from './Inputs.module.css'
 import ToDoContext from '../Contexts/ToDoContext'
 
 const Inputs = () => {
-	const { addToDo, infoStatus, infoTab } = useContext(ToDoContext)
+	const { addToDo, infoStatus, infoTab, stateInput } = useContext(ToDoContext)
 
-	const [inputValue, setInputValue] = useState<string>('')
+	const [inputValue, setInputValue] = useState<string>(stateInput)
 
 	const handleChangeInputValue: React.ChangeEventHandler<HTMLInputElement> | undefined = e => {
 		setInputValue(e.target.value)
@@ -14,7 +14,11 @@ const Inputs = () => {
 
 	const handleAddTask = () => {
 		addToDo(inputValue)
-		setInputValue('')
+		if (inputValue !== '') {
+			setInputValue('')
+		} else {
+			setInputValue(stateInput)
+		}
 	}
 
 	return (
