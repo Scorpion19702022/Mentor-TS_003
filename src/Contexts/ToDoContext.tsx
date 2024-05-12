@@ -37,6 +37,14 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setInfoTab(toDos.length)
 	}, [toDos.length])
 
+	useEffect(() => {
+		if (toDos.length === 0) {
+			setTimeout(() => {
+				setInfoStatus('stan akcji')
+			}, 3000)
+		}
+	}, [toDos.length])
+
 	const addToDo = (valueFromInput: string) => {
 		const Task = {
 			id: uuidv4(),
@@ -61,9 +69,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		} else if (deleteTask.length < 2 && deleteTask.length !== 0) {
 			setInfoStatus('usunięto poprawnie zadanie')
 		} else if (deleteTask.length === 0) {
-			setTimeout(() => {
-				setInfoStatus('usunięto wszystkie zadania')
-			}, 3000)
+			setInfoStatus('usunięto wszystkie zadania')
 		}
 	}
 
