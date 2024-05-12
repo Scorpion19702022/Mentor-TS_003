@@ -56,6 +56,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const deleteToDo = (id: string) => {
 		const deleteTask = toDos.filter((item: ToDoItemType) => item.id !== id)
 		setToDos(deleteTask)
+		if (deleteTask.length === 2) {
+			setInfoStatus('teraz możesz dodać zadanie')
+		}
 	}
 
 	const completeToDo = (id: string) => {
