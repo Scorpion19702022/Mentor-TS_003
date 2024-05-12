@@ -31,11 +31,11 @@ const Inputs = () => {
 				</div>
 			</div>
 			<div className={styles.box_info}>
-				<p className={styles.state_info}>
-					Informacja o stanie: <span className={styles.span_state}>{infoStatus}</span>
+				<p className={styles.state_info_one}>
+					Informacja o stanie:<span className={styles.span_state}> {infoStatus}</span>
 				</p>
-				<p className={styles.state_info}>
-					Ilość zadań: <span className={styles.span_state}>{infoTab}</span>
+				<p className={styles.state_info_two}>
+					Ilość zadań: <span className={styles.span_state}> {infoTab}</span>
 				</p>
 			</div>
 		</div>

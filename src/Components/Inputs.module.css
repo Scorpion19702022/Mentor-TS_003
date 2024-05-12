@@ -117,10 +117,18 @@
 	justify-content: space-between;
 }
 
-.state_info {
+.state_info_one,
+.state_info_two {
 	width: 50%;
 	font-size: 1.2em;
 	color: var(--color-blue06);
+}
+
+.state_info_one {
+	text-align: left;
+}
+.state_info_two {
+	text-align: right;
 }
 
 .span_state {
