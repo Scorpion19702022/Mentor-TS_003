@@ -7,7 +7,6 @@ type InitialStateType = {
 	toDos: ToDoItemType[]
 	infoStatus: string
 	infoTab: number
-	inputIsText: string
 	addToDo: (valueFromInput: string) => void
 	deleteToDo: (id: string) => void
 	completeToDo: (id: string) => void
@@ -21,7 +20,6 @@ const InitialState: InitialStateType = {
 	toDos: [],
 	infoStatus: '',
 	infoTab: 0,
-	inputIsText: '',
 	addToDo: (valueFromInput: string) => {},
 	deleteToDo: (id: string) => {},
 	completeToDo: (id: string) => {},
@@ -34,8 +32,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const [infoStatus, setInfoStatus] = useState('stan akcji')
 	const [infoTab, setInfoTab] = useState(toDos.length)
-
-	const [inputIsText, setInputIsText] = useState('')
 
 	useEffect(() => {
 		setInfoTab(toDos.length)
@@ -73,7 +69,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	return (
-		<ToDoContext.Provider value={{ toDos, infoStatus, infoTab, inputIsText, addToDo, deleteToDo, completeToDo }}>
+		<ToDoContext.Provider value={{ toDos, infoStatus, infoTab, addToDo, deleteToDo, completeToDo }}>
 			{children}
 		</ToDoContext.Provider>
 	)
