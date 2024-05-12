@@ -68,9 +68,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			return { ...item }
 		})
 
-		const toDoMapItem = toDos.find(item => item.isComplete)
+		const toDoMapItem = toDos.find(item => item.isComplete && item.id === id)
 		if (toDoMapItem) {
-			setInfoStatus('cofnięto wykonanie zadania')
+			setInfoStatus(`cofnięto wykonanie zadania "${toDoMapItem.task}"`)
 		}
 
 		setToDos(completeTasks)
