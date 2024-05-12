@@ -46,6 +46,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		if (Task.task !== '' && toDos.length < 3) {
 			setToDos([...toDos, Task])
 			setInfoStatus('dodano prawidłowo')
+		} else if (Task.task === '') {
+			setInfoStatus('musisz wpisać treść')
 		} else if (toDos.length >= 3) {
 			setInfoStatus('dosiągąłeś maksymalną ilość zadań')
 		}
