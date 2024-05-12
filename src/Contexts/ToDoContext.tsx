@@ -37,13 +37,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setInfoTab(toDos.length)
 	}, [toDos.length])
 
-	useEffect(() => {
-		const toDoMapItem = toDos.find(item => item.isComplete)
-		if (!toDoMapItem) {
-			setInfoStatus('cofnięto wykonanie zadania')
-		}
-	}, [toDos])
-
 	const addToDo = (valueFromInput: string) => {
 		const Task = {
 			id: uuidv4(),
@@ -74,6 +67,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 			return { ...item }
 		})
+
+		const toDoMapItem = toDos.find(item => item.isComplete)
+		if (toDoMapItem) {
+			setInfoStatus('cofnięto wykonanie zadania')
+		}
 
 		setToDos(completeTasks)
 	}
