@@ -61,7 +61,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		} else if (deleteTask.length < 2 && deleteTask.length !== 0) {
 			setInfoStatus('usunięto poprawnie zadanie')
 		} else if (deleteTask.length === 0) {
-			setInfoStatus('usunięto wszystkie zadania')
+			setTimeout(() => {
+				setInfoStatus('usunięto wszystkie zadania')
+			}, 3000)
 		}
 	}
 
