@@ -58,6 +58,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setToDos(deleteTask)
 		if (deleteTask.length === 2) {
 			setInfoStatus('teraz możesz dodać zadanie')
+		} else if (deleteTask.length < 2 && deleteTask.length !== 0) {
+			setInfoStatus('usunięto poprawnie zadanie')
+		} else if (deleteTask.length === 0) {
+			setInfoStatus('usunięto wszystkie zadania')
 		}
 	}
 
