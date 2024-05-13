@@ -54,6 +54,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		if (Task.task !== '' && toDos.length < 12) {
 			setToDos([...toDos, Task])
 			setInfoStatus('dodano prawidłowo')
+			setTimeout(() => {
+				setInfoStatus('stan akcji')
+			}, 3000)
 		} else if (Task.task === '') {
 			setInfoStatus('musisz wpisać treść')
 		} else if (toDos.length >= 12) {
