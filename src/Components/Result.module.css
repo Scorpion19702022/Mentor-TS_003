@@ -95,6 +95,7 @@
 	color: var(--color-blue03);
 	cursor: pointer;
 	z-index: 1;
+	overflow: hidden;
 }
 
 .btn_sort::before {
@@ -105,6 +106,11 @@
 	transform: translate(-130%, -35%);
 	background-color: var(--color-blue09);
 	z-index: -1;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn_sort:hover::before {
+	transform: translate(-70%, -35%);
 }
 
 .btn_sort::after {
@@ -115,4 +121,9 @@
 	transform: translate(30%, -35%);
 	background-color: var(--color-blue09);
 	z-index: -1;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn_sort:hover::after {
+	transform: translate(-30%, -35%);
 }
