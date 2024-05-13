@@ -14,7 +14,7 @@ const Inputs = () => {
 
 	const handleAddTask = () => {
 		addToDo(inputValue)
-		if (toDos.length < 10) {
+		if (toDos.length < 12) {
 			setInputValue('')
 		}
 	}

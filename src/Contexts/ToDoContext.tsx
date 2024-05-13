@@ -51,12 +51,12 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			task: valueFromInput,
 			isComplete: false,
 		}
-		if (Task.task !== '' && toDos.length < 10) {
+		if (Task.task !== '' && toDos.length < 12) {
 			setToDos([...toDos, Task])
 			setInfoStatus('dodano prawidłowo')
 		} else if (Task.task === '') {
 			setInfoStatus('musisz wpisać treść')
-		} else if (toDos.length >= 10) {
+		} else if (toDos.length >= 12) {
 			setInfoStatus('dosiągąłeś maksymalną ilość zadań')
 		}
 	}
@@ -64,9 +64,9 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const deleteToDo = (id: string) => {
 		const deleteTask = toDos.filter((item: ToDoItemType) => item.id !== id)
 		setToDos(deleteTask)
-		if (deleteTask.length === 9) {
+		if (deleteTask.length === 11) {
 			setInfoStatus('teraz możesz dodać zadanie')
-		} else if (deleteTask.length < 9 && deleteTask.length !== 0) {
+		} else if (deleteTask.length < 11 && deleteTask.length !== 0) {
 			setInfoStatus('usunięto poprawnie zadanie')
 		} else if (deleteTask.length === 0) {
 			setInfoStatus('usunięto wszystkie zadania')
