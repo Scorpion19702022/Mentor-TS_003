@@ -29,7 +29,14 @@ const Result = () => {
 		)
 	})
 
-	return <div className={styles.wrapper_result}>{yourTasks}</div>
+	return (
+		<div className={styles.wrapper_result}>
+			<div className={styles.box_btn}>
+				<button className={styles.btn_sort}>Posortuj alfabetycznie</button>
+			</div>
+			{yourTasks}
+		</div>
+	)
 }
 
 export default Result
