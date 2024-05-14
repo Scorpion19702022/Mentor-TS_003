@@ -36,7 +36,7 @@ const ToDoContext = createContext(InitialState)
 export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	const [toDos, setToDos] = useState<ToDoItemType[]>([])
 
-	const [infoStatus, setInfoStatus] = useState('stan akcji')
+	const [infoStatus, setInfoStatus] = useState('oczekuję')
 	const [infoTab, setInfoTab] = useState(toDos.length)
 
 	const [emptyArray, setEmptyArray] = useState([])
@@ -55,7 +55,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setToDos([...toDos, Task])
 			setInfoStatus('dodano prawidłowo')
 			setTimeout(() => {
-				setInfoStatus('stan akcji')
+				setInfoStatus('oczekuję')
 			}, 3000)
 		} else if (Task.task === '') {
 			setInfoStatus('musisz wpisać treść')
@@ -72,12 +72,12 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		} else if (deleteTask.length < 11 && deleteTask.length !== 0) {
 			setInfoStatus('usunięto poprawnie zadanie')
 			setTimeout(() => {
-				setInfoStatus('stan akcji')
+				setInfoStatus('oczekuję')
 			}, 3000)
 		} else if (deleteTask.length === 0) {
 			setInfoStatus('usunięto wszystkie zadania')
 			setTimeout(() => {
-				setInfoStatus('stan akcji')
+				setInfoStatus('oczekuję')
 			}, 3000)
 		}
 	}
@@ -116,7 +116,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		})
 
 		setTimeout(() => {
-			setInfoStatus('stan akcji')
+			setInfoStatus('oczekuję')
 		}, 3000)
 
 		// console.log(sortTask)
@@ -129,7 +129,7 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 			setInfoStatus('usunięto wszystkie zadania')
 		}
 		setTimeout(() => {
-			setInfoStatus('stan akcji')
+			setInfoStatus('oczekuję')
 		}, 3000)
 	}
 

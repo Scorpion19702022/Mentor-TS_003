@@ -36,7 +36,7 @@ const Result = () => {
 					Posortuj alfabetycznie
 				</button>
 				<button className={styles.btn_action} onClick={deleteAll}>
-					usuń wszystkie zadania
+					Usuń wszystkie zadania
 				</button>
 			</div>
 			{yourTasks}
