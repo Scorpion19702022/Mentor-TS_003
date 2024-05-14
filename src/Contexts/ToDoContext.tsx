@@ -95,7 +95,11 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 	}
 
 	const sortToDo = () => {
-		console.log()
+		const sortTask = toDos.map(item => item.task)
+		sortTask.sort(a, b) => {
+const sortA = a
+const sortB = b
+		}
 	}
 
 	return (
