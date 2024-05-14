@@ -10,6 +10,7 @@ type InitialStateType = {
 	addToDo: (valueFromInput: string) => void
 	deleteToDo: (id: string) => void
 	completeToDo: (id: string) => void
+	sortToDo: () => void
 }
 
 type ToDoProviderType = {
@@ -23,6 +24,7 @@ const InitialState: InitialStateType = {
 	addToDo: (valueFromInput: string) => {},
 	deleteToDo: (id: string) => {},
 	completeToDo: (id: string) => {},
+	sortToDo: () => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -92,8 +94,12 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setToDos(completeTasks)
 	}
 
+	const sortToDo = () => {
+		console.log()
+	}
+
 	return (
-		<ToDoContext.Provider value={{ toDos, infoStatus, infoTab, addToDo, deleteToDo, completeToDo }}>
+		<ToDoContext.Provider value={{ toDos, infoStatus, infoTab, addToDo, deleteToDo, completeToDo, sortToDo }}>
 			{children}
 		</ToDoContext.Provider>
 	)

@@ -4,7 +4,7 @@ import styles from './Result.module.css'
 import ToDoContext from '../Contexts/ToDoContext'
 
 const Result = () => {
-	const { toDos, deleteToDo, completeToDo } = useContext(ToDoContext)
+	const { toDos, deleteToDo, completeToDo, sortToDo } = useContext(ToDoContext)
 
 	const yourTasks = toDos.map(toDo => {
 		return (
@@ -32,7 +32,9 @@ const Result = () => {
 	return (
 		<div className={styles.wrapper_result}>
 			<div className={styles.box_btn}>
-				<button className={styles.btn_sort}>Posortuj alfabetycznie</button>
+				<button className={styles.btn_sort} onClick={sortToDo}>
+					Posortuj alfabetycznie
+				</button>
 			</div>
 			{yourTasks}
 		</div>
