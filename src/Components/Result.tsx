@@ -4,7 +4,7 @@ import styles from './Result.module.css'
 import ToDoContext from '../Contexts/ToDoContext'
 
 const Result = () => {
-	const { toDos, deleteToDo, completeToDo, sortToDo } = useContext(ToDoContext)
+	const { toDos, deleteToDo, completeToDo, sortToDo, deleteAll } = useContext(ToDoContext)
 
 	const yourTasks = toDos.map(toDo => {
 		return (
@@ -35,7 +35,9 @@ const Result = () => {
 				<button className={styles.btn_action} onClick={() => sortToDo(toDos)}>
 					Posortuj alfabetycznie
 				</button>
-				<button className={styles.btn_action}>usuń wszystkie zadania</button>
+				<button className={styles.btn_action} onClick={deleteAll}>
+					usuń wszystkie zadania
+				</button>
 			</div>
 			{yourTasks}
 		</div>
