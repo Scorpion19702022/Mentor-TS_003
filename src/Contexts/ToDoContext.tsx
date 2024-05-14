@@ -105,10 +105,19 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		toDos.sort((a, b) => {
 			// Tutaj musisz określić sposób sortowania
 			// na przykład, sortowanie alfabetyczne
-			if (a.task < b.task) return -1
-			if (a.task > b.task) return 1
+			if (a.task < b.task) {
+				setInfoStatus('posortowano afalbetycznie')
+				return -1
+			} else if (a.task > b.task) {
+				setInfoStatus('posortowano afalbetycznie')
+				return 1
+			}
 			return 0
 		})
+
+		setTimeout(() => {
+			setInfoStatus('stan akcji')
+		}, 3000)
 
 		// console.log(sortTask)
 		// Tutaj możesz przypisać posortowane wartości z powrotem do toDos
