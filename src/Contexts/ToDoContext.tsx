@@ -10,7 +10,7 @@ type InitialStateType = {
 	addToDo: (valueFromInput: string) => void
 	deleteToDo: (id: string) => void
 	completeToDo: (id: string) => void
-	sortToDo: () => void
+	sortToDo: (toDos: ToDoItemType[]) => void
 }
 
 type ToDoProviderType = {
@@ -24,7 +24,7 @@ const InitialState: InitialStateType = {
 	addToDo: (valueFromInput: string) => {},
 	deleteToDo: (id: string) => {},
 	completeToDo: (id: string) => {},
-	sortToDo: () => {},
+	sortToDo: (toDos: ToDoItemType[]) => {},
 }
 
 const ToDoContext = createContext(InitialState)
@@ -94,12 +94,18 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setToDos(completeTasks)
 	}
 
-	const sortToDo = () => {
-		const sortTask = toDos.map(item => item.task)
-		sortTask.sort(a, b) => {
-const sortA = a
-const sortB = b
-		}
+	const sortToDo = (toDos: ToDoItemType[]) => {
+		// const sortTask = toDos.map(item => item.task)
+		toDos.sort((a, b) => {
+			// Tutaj musisz określić sposób sortowania
+			// na przykład, sortowanie alfabetyczne
+			if (a.task < b.task) return -1
+			if (a.task > b.task) return 1
+			return 0
+		})
+
+		// console.log(sortTask)
+		// Tutaj możesz przypisać posortowane wartości z powrotem do toDos
 	}
 
 	return (

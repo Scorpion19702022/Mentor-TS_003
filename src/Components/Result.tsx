@@ -32,7 +32,7 @@ const Result = () => {
 	return (
 		<div className={styles.wrapper_result}>
 			<div className={styles.box_btn}>
-				<button className={styles.btn_sort} onClick={sortToDo}>
+				<button className={styles.btn_sort} onClick={() => sortToDo(toDos)}>
 					Posortuj alfabetycznie
 				</button>
 			</div>
