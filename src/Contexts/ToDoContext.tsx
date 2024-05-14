@@ -37,14 +37,6 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		setInfoTab(toDos.length)
 	}, [toDos.length])
 
-	// useEffect(() => {
-	// 	if (toDos.length === 0) {
-	// 		setTimeout(() => {
-	// 			setInfoStatus('stan akcji')
-	// 		}, 3000)
-	// 	}
-	// }, [toDos.length])
-
 	const addToDo = (valueFromInput: string) => {
 		const Task = {
 			id: uuidv4(),
