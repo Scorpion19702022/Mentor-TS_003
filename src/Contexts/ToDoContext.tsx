@@ -7,6 +7,7 @@ type InitialStateType = {
 	toDos: ToDoItemType[]
 	infoStatus: string
 	infoTab: number
+	emptyArray: string[] | number[] | boolean[]
 	addToDo: (valueFromInput: string) => void
 	deleteToDo: (id: string) => void
 	completeToDo: (id: string) => void
@@ -22,6 +23,7 @@ const InitialState: InitialStateType = {
 	toDos: [],
 	infoStatus: '',
 	infoTab: 0,
+	emptyArray: [],
 	addToDo: (valueFromInput: string) => {},
 	deleteToDo: (id: string) => {},
 	completeToDo: (id: string) => {},
@@ -36,6 +38,8 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const [infoStatus, setInfoStatus] = useState('stan akcji')
 	const [infoTab, setInfoTab] = useState(toDos.length)
+
+	const [emptyArray, setEmptyArray] = useState([])
 
 	useEffect(() => {
 		setInfoTab(toDos.length)
@@ -110,11 +114,13 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 		// Tutaj możesz przypisać posortowane wartości z powrotem do toDos
 	}
 
-	const deleteAll = () => {}
+	const deleteAll = () => {
+		setToDos(emptyArray)
+	}
 
 	return (
 		<ToDoContext.Provider
-			value={{ toDos, infoStatus, infoTab, addToDo, deleteToDo, completeToDo, sortToDo, deleteAll }}
+			value={{ toDos, infoStatus, infoTab, emptyArray, addToDo, deleteToDo, completeToDo, sortToDo, deleteAll }}
 		>
 			{children}
 		</ToDoContext.Provider>
