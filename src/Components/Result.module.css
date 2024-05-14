@@ -81,12 +81,11 @@
 .box_btn {
 	width: 100%;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: space-around;
 	margin-bottom: 1em;
 }
 
-.btn_sort {
+.btn_action {
 	position: relative;
 	width: 20%;
 	padding: 0.8em 1em;
@@ -98,7 +97,7 @@
 	overflow: hidden;
 }
 
-.btn_sort::before {
+.btn_action::before {
 	position: absolute;
 	content: '';
 	width: 100%;
@@ -109,11 +108,11 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.btn_sort:hover::before {
+.btn_action:hover::before {
 	transform: translate(-70%, -35%);
 }
 
-.btn_sort::after {
+.btn_action::after {
 	position: absolute;
 	content: '';
 	width: 100%;
@@ -124,6 +123,6 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.btn_sort:hover::after {
+.btn_action:hover::after {
 	transform: translate(-30%, -35%);
 }
