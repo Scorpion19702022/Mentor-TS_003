@@ -116,6 +116,10 @@ export const ToDoProvider = ({ children }: ToDoProviderType) => {
 
 	const deleteAll = () => {
 		setToDos(emptyArray)
+		setInfoStatus('usunięto wszystkie zadania')
+		setTimeout(() => {
+			setInfoStatus('stan akcji')
+		}, 3000)
 	}
 
 	return (
